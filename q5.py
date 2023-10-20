@@ -8,7 +8,7 @@
 # Description: This class presents a Python program that implements a basic delta debugging tool for minimizing testcases.
 #
 
-
+#bugged code
 def processString(input_str):
     output_str = ""
     for char in input_str:
@@ -21,7 +21,7 @@ def processString(input_str):
 
     return output_str 
 
-
+#expectations: fixed code
 def expected_output(input_str):
     output_str = ""
     for char in input_str:
@@ -34,7 +34,7 @@ def expected_output(input_str):
 
     return output_str 
 
-
+#minimizing algorithm
 def delta_debug(input_str):
     # If the entire string does not fail the test, return None
     if not test_func(input_str):
@@ -57,10 +57,11 @@ def delta_debug(input_str):
             n = min(n * 2, len(input_str))  # Increase granularity
     return input_str
 
+#tester function
 def test_func(input_str):
     return processString(input_str) != expected_output(input_str)
 
-# Test delta_debug with your inputs here.
+# Test delta_debug with given test cases.
 print(delta_debug("abcdefG1"))
 print(delta_debug("CCDDEExy"))
 print(delta_debug("1234567b"))
